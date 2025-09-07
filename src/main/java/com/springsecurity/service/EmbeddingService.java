@@ -9,7 +9,7 @@ import java.util.Map;
 @Service
 public class EmbeddingService {
 
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "";
 
     public final WebClient client = WebClient.builder()
             .baseUrl("https://api.openai.com/v1/embeddings")
