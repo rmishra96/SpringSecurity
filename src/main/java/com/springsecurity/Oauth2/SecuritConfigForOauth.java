@@ -29,7 +29,6 @@ public class SecuritConfigForOauth {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, CustomOAuth2SuccessHandler successHandler) throws Exception {
         http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf(csrf -> csrf.disable())
                 .oauth2Login(oauth -> oauth.successHandler(successHandler))
                 .addFilterBefore(new OauthValidationFilter(tokenValidatorUtil), UsernamePasswordAuthenticationFilter.class);
         return  http.build();
